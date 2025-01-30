@@ -12,7 +12,9 @@ License:	GPL-2.0
 Group:		Emulators
 BuildRequires:	dos2unix
 BuildRequires:	pkgconfig(alsa)
+BuildRequires:	pkgconfig(asio)
 BuildRequires:	pkgconfig(cairo)
+BuildRequires:	pkgconfig(libutf8proc)
 BuildRequires:	pkgconfig(expat)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:	pkgconfig(fontconfig)
