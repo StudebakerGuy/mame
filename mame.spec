@@ -32,6 +32,7 @@ BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(libzstd)
 BuildRequires:	pkgconfig(RapidJSON)
 BuildRequires:	pkgconfig(pugixml)
+BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
@@ -82,9 +83,9 @@ rm -rf \
 	docs/themes
 
 %build
-#	CC="%{__cc}" \
-#	CXX="%{__cxx}" \
 %make_build all TARGET=mame \
+	CC="%{__cc}" \
+	CXX="%{__cxx}" \
 	NOWERROR=1 \
 	QT_HOME=%{_libdir}/qt6 \
 	NO_USE_QTDEBUG=1 \
