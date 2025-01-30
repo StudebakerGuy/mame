@@ -27,6 +27,7 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xinerama)
 BuildRequires:	pkgconfig(xrender)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:	pkgconfig(libzstd)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
@@ -78,6 +79,8 @@ rm -rf \
 
 %build
 %make_build all TARGET=mame \
+	CC="%{__cc}" \
+	CXX="%{__cxx}" \
 	NOWERROR=1 \
 	QT_HOME=%{_libdir}/qt6 \
 	NO_USE_QTDEBUG=1 \
