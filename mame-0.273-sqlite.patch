@@ -1,0 +1,30 @@
+diff -up mame-mame0273/3rdparty/lsqlite3/lsqlite3.c.omv~ mame-mame0273/3rdparty/lsqlite3/lsqlite3.c
+--- mame-mame0273/3rdparty/lsqlite3/lsqlite3.c.omv~	2025-01-30 04:29:47.915476635 +0100
++++ mame-mame0273/3rdparty/lsqlite3/lsqlite3.c	2025-01-30 04:30:29.742515826 +0100
+@@ -803,7 +803,7 @@ static int lcontext_set_aggregate_contex
+ static int lcontext_aggregate_count(lua_State *L) {
+     lcontext *ctx = lsqlite_checkcontext(L, 1);
+     lcontext_check_aggregate(L, ctx);
+-    lua_pushinteger(L, sqlite3_aggregate_count(ctx->ctx));
++    lua_pushinteger(L, 0 /*sqlite3_aggregate_count(ctx->ctx)*/);
+     return 1;
+ }
+ 
+@@ -1282,7 +1282,7 @@ static int db_trace(lua_State *L) {
+         db->trace_udata = LUA_NOREF;
+ 
+         /* clear trace handler */
+-        sqlite3_trace(db->db, NULL, NULL);
++        //sqlite3_trace(db->db, NULL, NULL);
+     }
+     else {
+         luaL_checktype(L, 2, LUA_TFUNCTION);
+@@ -1297,7 +1297,7 @@ static int db_trace(lua_State *L) {
+         db->trace_cb = luaL_ref(L, LUA_REGISTRYINDEX);
+ 
+         /* set trace handler */
+-        sqlite3_trace(db->db, db_trace_callback, db);
++        //sqlite3_trace(db->db, db_trace_callback, db);
+     }
+ 
+     return 0;
