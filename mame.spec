@@ -85,6 +85,7 @@ rm -rf \
 
 %build
 %make_build all TARGET=mame \
+	config=release64 \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
 	NOWERROR=1 \
